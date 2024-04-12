@@ -1,0 +1,29 @@
+<div class="mb-3 w-50 mx-auto">
+    <label for="" class="form-label">Categories</label>
+    <select class="form-select form-select-lg"  name="" id="" [(ngModel)]="selectedId">
+      <option value="0" selected>All</option>
+        <option *ngFor="let cat of categories" value="{{cat.id}}">{{cat.name}}</option>
+    </select>
+</div>
+
+<app-products
+ [recievedId]="selectedId" (productslectedtobuy)="Insertprd($event)">
+</app-products>
+<br>
+<hr>
+<br>
+
+<table class="table ">
+      <tr>
+        <th scope="col">Product name</th>
+        <th scope="col">Product Price</th>
+        <th scope="col">Left in store</th>
+      </tr>
+      <tr *ngFor="let prd of products">
+        <td>{{prd.name}}</td>
+        <td>{{prd.price}}</td>
+        <td>{{prd.quantity}}</td>
+      </tr>
+     
+  </table>
+  <h1>totalprice is {{totalprice}}</h1>

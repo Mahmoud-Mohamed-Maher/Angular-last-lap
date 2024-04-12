@@ -1,0 +1,23 @@
+
+ <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-5 ">
+        <div class="card mb-3">
+          <img [src]="product?.img" class="card-img-top " alt="..."style="height: 250px;">
+          <div class="card-body  text-center" >
+            <h5 class="card-title">{{ product?.name }}</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+            <p class="card-text">Price is {{ product?.price }}</p>
+            <p class="card-text">Quantity is {{ product?.quantity }}</p>
+            <div class="my-5 ">
+              <button class="btn btn-danger me-2 " (click)="prev()">previous</button>
+              <button class="btn btn-warning  me-2 " (click)="next()">next</button>
+      
+            </div>
+          </div>
+        </div>
+        <button class="btn btn-info mx-auto d-block" (click)="back()">Go Back</button>
+      </div>
+      
+    </div>
+  </div>
